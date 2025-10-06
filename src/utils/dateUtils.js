@@ -3,9 +3,9 @@
  */
 
 /**
- * Format a date as a string suitable for a HTML `datetime-local` input.
- * @param {Date} date - The date to format. Values accepted by the Date constructor are supported.
- * @returns {string} The date formatted as `YYYY-MM-DDTHH:MM`.
+ * Formats a date for use in an HTML `datetime-local` input (YYYY-MM-DDTHH:MM).
+ * @param {Date|string|number} date - Value accepted by the Date constructor representing the date/time.
+ * @returns {string} The formatted date string in `YYYY-MM-DDTHH:MM` format.
  */
 export function formatDateForInput(date) {
   const d = new Date(date);
@@ -44,9 +44,9 @@ export function getFirstDayOfMonth(date) {
 }
 
 /**
- * Return the last day of the month for the given date.
- * @param {Date} date - Reference date whose month is used to determine the last day.
- * @returns {Date} A Date representing the last day of the month of the provided date.
+ * Get the last calendar day of the month for the given date.
+ * @param {Date} date - Reference date whose month is used.
+ * @returns {Date} The Date for the last day of the same month as `date`.
  */
 export function getLastDayOfMonth(date) {
   return new Date(date.getFullYear(), date.getMonth() + 1, 0);
