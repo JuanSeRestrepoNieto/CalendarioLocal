@@ -3,9 +3,9 @@
  */
 
 /**
- * Formatea una fecha a string para input datetime-local
- * @param {Date} date - Fecha a formatear
- * @returns {string} - Fecha formateada
+ * Format a date as a string suitable for a datetime-local input.
+ * @param {Date|number|string} date - A Date or value accepted by the Date constructor to format.
+ * @returns {string} A string in the format `YYYY-MM-DDTHH:MM` suitable for `input[type="datetime-local"]`.
  */
 export function formatDateForInput(date) {
   const d = new Date(date);
@@ -18,9 +18,9 @@ export function formatDateForInput(date) {
 }
 
 /**
- * Formatea una fecha a string legible
- * @param {Date} date - Fecha a formatear
- * @returns {string} - Fecha formateada
+ * Format a date into a human-readable Spanish locale string including time.
+ * @param {Date|string|number} date - Date object or value accepted by the Date constructor.
+ * @returns {string} A string formatted for the 'es-ES' locale with numeric year, long month name, numeric day, and two-digit hour and minute.
  */
 export function formatDateDisplay(date) {
   const d = new Date(date);
@@ -35,27 +35,27 @@ export function formatDateDisplay(date) {
 }
 
 /**
- * Obtiene el primer día del mes
- * @param {Date} date - Fecha de referencia
- * @returns {Date} - Primer día del mes
+ * Return the first day of the month for the given date.
+ * @param {Date} date - Reference date used to determine the month.
+ * @returns {Date} The Date representing the first day of the month of the provided date.
  */
 export function getFirstDayOfMonth(date) {
   return new Date(date.getFullYear(), date.getMonth(), 1);
 }
 
 /**
- * Obtiene el último día del mes
- * @param {Date} date - Fecha de referencia
- * @returns {Date} - Último día del mes
+ * Get the last day of the month for the given date.
+ * @param {Date} date - Reference date whose month will be used to determine the last day.
+ * @returns {Date} Date representing the last day of the month for the provided date.
  */
 export function getLastDayOfMonth(date) {
   return new Date(date.getFullYear(), date.getMonth() + 1, 0);
 }
 
 /**
- * Obtiene los días del mes en un array
- * @param {Date} date - Fecha de referencia
- * @returns {Array} - Array de fechas del mes
+ * Return an array containing a Date object for each day of the month that contains the given date.
+ * @param {Date} date - Reference date whose month will be enumerated.
+ * @returns {Date[]} An array of Date objects for every day in that month, in ascending order.
  */
 export function getMonthDays(date) {
   const firstDay = getFirstDayOfMonth(date);
